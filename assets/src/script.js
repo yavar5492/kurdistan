@@ -10,6 +10,7 @@ const menubarItem = document.querySelector(".menobar_title");
 const items = document.querySelector(".items");
 const html = document.querySelector("html");
 const overlay = document.querySelector(".overlay");
+const footer = document.querySelector(".footer");
 window.addEventListener('scroll', () => {
     if (window.pageYOffset >= headerOffset) {
         stickyElement.classList.add('fixed');
@@ -94,7 +95,7 @@ fetch("assets/json/data.json")
 
             e.preventDefault();
             html.classList.add("bodyScrollLock");
-
+            footer.classList.add("footerHidden")
             const id = Number(e.target.dataset.id);
 
             // **اینجا اصلاح شده:** از 'dataItem' (کل آرایه) برای پیدا کردن آیتم استفاده کنید
@@ -107,7 +108,7 @@ fetch("assets/json/data.json")
                         <div class="items_box">
                             <h2>${selection.title}</h2>
                             <p>${selection.paragraph}</p>
-                        </div>
+                        </div>  
                     </div>
                 `;
                 // برای جلوگیری از تکرار آیتم ها، محتوای فعلی را پاک کنید

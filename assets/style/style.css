@@ -334,3 +334,57 @@ nav {
 .bodyScrollLock {
     overflow: hidden;
 }
+.footer_box{
+    background-color: #0000009f;
+    backdrop-filter: blur(20px);
+    margin-top: 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.footerHidden{
+    display: none;
+}
+.footer_logo img{
+    width: 150px;
+}
+.footer_item{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.footer_instagrom{
+    background-color: #0000007d;
+    padding: 10px;
+    border-radius: 20px;
+    margin: 20px 10px 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .3s ease;
+}
+.footer_instagrom:hover{
+    box-shadow: 0 0 5px 1px rgba(161, 47, 193, 0.603);
+}
+.footer_instagrom a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footer_instagrom img{
+    width: 30px;
+}
+.footer_end{
+    background-color: #0000007d;
+    width: 100%;
+    padding: 9px 0;
+    color: #e3e3e3;
+    text-align: center;
+    font-family: "titr";
+    font-size: 16px;
+    box-shadow: 0px 3px 15px 1px rgba(161, 47, 193, 0.603);
+}
+.sushal{
+    display: flex;
+}
