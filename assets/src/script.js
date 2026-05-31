@@ -11,6 +11,10 @@ const items = document.querySelector(".items");
 const html = document.querySelector("html");
 const overlay = document.querySelector(".overlay");
 const footer = document.querySelector(".footer");
+const item_maq = document.querySelector(".item_maq");
+const btn_maq = document.querySelector(".donate");
+const ol_items = document.querySelector(".ol_maq");
+const overlay_maq = document.querySelector(".overlaytwo");
 window.addEventListener('scroll', () => {
     if (window.pageYOffset >= headerOffset) {
         stickyElement.classList.add('fixed');
@@ -57,6 +61,19 @@ overlay.addEventListener("click", e => {
     body.classList.remove("bodyScrollLock");
     overlay.classList.remove("overlay_show");
 });
+
+
+btn_maq.addEventListener("click", e => {
+    item_maq.classList.add('shwo');
+    body.classList.add("bodyScrollLock");
+    overlay_maq.classList.add("overlaytwo_show");
+})
+//جای درست کردن دکمه برگشت (اگر باشد)
+overlay_maq.addEventListener("click", e => {
+    body.classList.remove("bodyScrollLock");
+    item_maq.classList.remove('shwo');
+    overlay_maq.classList.remove("overlaytwo_show");
+});
 //مربوط به ایتم های منوبار که قراره تکمیل شه از این خط به پایین
 fetch("assets/json/data.json")
     .then(res => res.json())
@@ -80,6 +97,10 @@ fetch("assets/json/data.json")
                 </div>
             `;
             menubarItem.insertAdjacentHTML('beforeend', menubarItemHandler);
+            const ol_itemsHandler = `
+                <li><a class="mq_links_li" href="/${item.slug}" data-id="${item.id}">${item.title}</a></li>
+            `;
+            ol_items.insertAdjacentHTML('beforeend', ol_itemsHandler);
 
             // توجه: اضافه کردن event listener در داخل forEach ممکن است بهینه نباشد
             // و باعث ایجاد event listener های تکراری شود. بهتر است از event delegation استفاده کنید.
@@ -120,7 +141,40 @@ fetch("assets/json/data.json")
             menubarEL.classList.remove("menobar_header_box_show");
             overlay.classList.remove("overlay_show");
         });
+        ol_items.addEventListener("click", (ev) => {
+            // اطمینان حاصل کنید که روی لینک کلیک شده است
+            if (!ev.target.classList.contains("mq_links_li")) {
+                return;
+            }
 
+            ev.preventDefault();
+            html.classList.add("bodyScrollLock");
+            footer.classList.add("footerHidden")
+            const id = Number(ev.target.dataset.id);
+
+            // **اینجا اصلاح شده:** از 'dataItem' (کل آرایه) برای پیدا کردن آیتم استفاده کنید
+            const selection = dataItem.find(dataItem => dataItem.id === id); // از 'dataItem' به جای 'item' استفاده شده
+
+            // اطمینان از اینکه آیتم پیدا شده است
+            if (selection) {
+                const menubarItemShowHandler = `
+                    <div class="item">
+                        <div class="items_box">
+                            <h2>${selection.title}</h2>
+                            <p>${selection.paragraph}</p>
+                        </div>  
+                    </div>
+                `;
+                // برای جلوگیری از تکرار آیتم ها، محتوای فعلی را پاک کنید
+                items.innerHTML = "";
+                items.insertAdjacentHTML("beforeend", menubarItemShowHandler);
+            } else {
+                console.error("Item not found with id:", id);
+            }
+            body.classList.remove("bodyScrollLock");
+            item_maq.classList.remove('shwo');
+            overlay_maq.classList.remove("overlaytwo_show");
+        });
     })
     .catch(error => {
         console.error("Error fetching or processing JSON:", error);

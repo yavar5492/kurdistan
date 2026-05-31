@@ -388,3 +388,67 @@ nav {
 .sushal{
     display: flex;
 }
+.maq_link a{
+    text-decoration: none;
+    color: #e3e3e3;
+}
+.maq_link li{
+    padding: 20px;
+    text-align: center;
+}
+.maq_link ol{
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    background-color: #0000007d;
+    padding: 30px 10px;
+    border-radius: 40px;
+    scrollbar-width: none;
+    height: 60%;
+    width: 90%;
+    pointer-events: all;
+    align-items: center;
+    overflow: auto;
+    position: relative;
+    top: 50px;
+}
+.overlaytwo{
+    position: fixed;
+    top: 0;
+    display: none;
+    width: 100%;
+    height: 100vh;
+    z-index: 500;
+}
+.overlaytwo_show{
+    display: block;
+}
+.maq_link{
+    display: flex;
+    pointer-events: none;
+    align-items: center;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    background-color: #0000007d;
+    backdrop-filter: blur(20px);
+    height: 100vh;
+    width: 100%;
+    z-index: 500;
+    font-family: "titr";
+    font-size: 19px;
+}
+.maq_link h2{
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    margin-top: 30px;
+}
+.item_maq{
+    display: none;
+}
+.shwo{
+    display: block;
+}
