@@ -11,7 +11,6 @@ const items = document.querySelector(".items");
 const html = document.querySelector("html");
 const overlay = document.querySelector(".overlay");
 const footer = document.querySelector(".footer");
-const item_maq = document.querySelector(".item_maq");
 const btn_maq = document.querySelector(".donate");
 const ol_items = document.querySelector(".ol_maq");
 const mq_link = document.querySelector(".maq_link");
@@ -66,13 +65,19 @@ overlay.addEventListener("click", e => {
 
 btn_maq.addEventListener("click", e => {
     mq_link.classList.add('shwo');
+    setTimeout(() =>{
+        mq_link.classList.add('shwoo');
+    }, 50);
     body.classList.add("bodyScrollLock");
     overlay_maq.classList.add("overlaytwo_show");
 })
 //جای درست کردن دکمه برگشت (اگر باشد)
 overlay_maq.addEventListener("click", e => {
     body.classList.remove("bodyScrollLock");
-    mq_link.classList.remove('shwo');
+    mq_link.classList.remove('shwoo');
+    setTimeout(() =>{
+        mq_link.classList.remove('shwo');
+    }, 50);
     overlay_maq.classList.remove("overlaytwo_show");
 });
 //مربوط به ایتم های منوبار که قراره تکمیل شه از این خط به پایین
@@ -139,6 +144,7 @@ fetch("assets/json/data.json")
             } else {
                 console.error("Item not found with id:", id);
             }
+            stickyElement.classList.add('fixed');
             menubarEL.classList.remove("menobar_header_box_show");
             overlay.classList.remove("overlay_show");
         });
@@ -172,8 +178,12 @@ fetch("assets/json/data.json")
             } else {
                 console.error("Item not found with id:", id);
             }
+            stickyElement.classList.add('fixed');
             body.classList.remove("bodyScrollLock");
-            item_maq.classList.remove('shwo');
+            mq_link.classList.remove('shwoo');
+            setTimeout(() =>{
+                mq_link.classList.remove('shwo');
+            }, 50);
             overlay_maq.classList.remove("overlaytwo_show");
         });
     })

@@ -227,6 +227,7 @@ nav {
     color: #e3e3e3;
     font-family: "bahij";
     overflow: scroll;
+    scrollbar-width: none;
     height: 65vh;
     font-size: 15px;
 }
@@ -410,6 +411,7 @@ nav {
     width: 90%;
     pointer-events: all;
     align-items: center;
+    margin: 0 auto;
     overflow: auto;
     position: relative;
     top: 50px;
@@ -447,9 +449,13 @@ nav {
     margin-top: 30px;
 }
 .maq_link{
+    display: none;
     opacity: 0;
     transition: all .3s ease;
 }
 .shwo{
+    display: block;
+}
+.shwoo{
     opacity: 1;
 }
