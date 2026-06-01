@@ -14,6 +14,7 @@ const footer = document.querySelector(".footer");
 const item_maq = document.querySelector(".item_maq");
 const btn_maq = document.querySelector(".donate");
 const ol_items = document.querySelector(".ol_maq");
+const mq_link = document.querySelector(".maq_link");
 const overlay_maq = document.querySelector(".overlaytwo");
 window.addEventListener('scroll', () => {
     if (window.pageYOffset >= headerOffset) {
@@ -64,14 +65,14 @@ overlay.addEventListener("click", e => {
 
 
 btn_maq.addEventListener("click", e => {
-    item_maq.classList.add('shwo');
+    mq_link.classList.add('shwo');
     body.classList.add("bodyScrollLock");
     overlay_maq.classList.add("overlaytwo_show");
 })
 //جای درست کردن دکمه برگشت (اگر باشد)
 overlay_maq.addEventListener("click", e => {
     body.classList.remove("bodyScrollLock");
-    item_maq.classList.remove('shwo');
+    mq_link.classList.remove('shwo');
     overlay_maq.classList.remove("overlaytwo_show");
 });
 //مربوط به ایتم های منوبار که قراره تکمیل شه از این خط به پایین
