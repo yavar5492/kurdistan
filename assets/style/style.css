@@ -402,7 +402,6 @@ nav {
     padding: 0;
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
     background-color: #0000007d;
     padding: 30px 10px;
     border-radius: 40px;
@@ -414,7 +413,7 @@ nav {
     margin: 0 auto;
     overflow: auto;
     position: relative;
-    top: 50px;
+    top: 10px;
 }
 .overlaytwo{
     position: fixed;
@@ -446,7 +445,8 @@ nav {
     color: white;
     text-align: center;
     font-size: 20px;
-    margin-top: 30px;
+    width: 90%;
+    margin: 0 auto;
 }
 .maq_link{
     display: none;
@@ -458,4 +458,30 @@ nav {
 }
 .shwoo{
     opacity: 1;
+}
+.home_exit{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+    width: 90%;
+    margin: 20px auto 30px;
+    border-radius: 20px;
+    background-color: #0000007d;
+    pointer-events: all;
+}
+.home img{
+    width: 35px;
+}
+.home{
+    display: flex;
+    align-items: center;
+}
+.exit{
+    all: unset;
+    display: flex;
+    align-items: center;
+}
+.exit img{
+    width: 35px;
 }
