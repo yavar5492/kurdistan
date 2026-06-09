@@ -150,6 +150,7 @@ fetch("assets/json/data.json")
                 // برای جلوگیری از تکرار آیتم ها، محتوای فعلی را پاک کنید
                 items.innerHTML = "";
                 items.insertAdjacentHTML("beforeend", menubarItemShowHandler);
+                title.insertAdjacentHTML("beforeend", ` - ${selection.title}`);
             } else {
                 console.error("Item not found with id:", id);
             }
@@ -184,6 +185,7 @@ fetch("assets/json/data.json")
                 // برای جلوگیری از تکرار آیتم ها، محتوای فعلی را پاک کنید
                 items.innerHTML = "";
                 items.insertAdjacentHTML("beforeend", menubarItemShowHandler);
+                title.insertAdjacentHTML("beforeend", ` - ${selection.title}`);
             } else {
                 console.error("Item not found with id:", id);
             }
