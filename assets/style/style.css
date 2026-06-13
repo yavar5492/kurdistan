@@ -318,6 +318,10 @@ nav {
     transition: all .1s ease;
     animation: show_items .3s ease;
 }
+.items_box::-webkit-scrollbar {
+    width: 0;
+    display: none;
+}
 @keyframes show_items {
     0%{
         opacity: 0;
