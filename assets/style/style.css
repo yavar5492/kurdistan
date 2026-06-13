@@ -310,6 +310,7 @@ nav {
 .items_box {
     height: 84vh;
     overflow-y: scroll;
+    scrollbar-width: none;
     width: 100%;
     padding: 80px 0px 20px;
     color: #e3e3e3;
