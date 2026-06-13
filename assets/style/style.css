@@ -71,7 +71,7 @@ nav {
     align-items: center;
     background-color: #0000009f;
     backdrop-filter: blur(20px);
-    border-radius: 25px;
+    border-radius: 9999px;
     transition: all .3s ease;
 }
 
@@ -187,9 +187,18 @@ nav {
 .table_cont tr {
     display: flex;
     align-items: center;
+    justify-content: center;
+    background-color: #00000013;
+    box-shadow: 0 0 9px 4px #000000aa;
+    padding: 5px 10px;
+    border-radius: 9999px;
     margin: 20px 0;
+    cursor: pointer;
+    transition: all .3s ease;
 }
-
+.table_cont tr:hover{
+    box-shadow: 0 0 9px 4px #000000de;
+}
 .table_cont td {
     display: flex;
     align-items: center;
@@ -207,6 +216,7 @@ nav {
 }
 .menobar_header_box {
     background-color: #000000d9;
+    backdrop-filter: blur(20px);
     height: 100vh;
     position: fixed;
     top: 0;
@@ -396,7 +406,10 @@ nav {
     color: #e3e3e3;
 }
 .maq_link li{
-    padding: 20px;
+    border-radius: 9999px;
+        box-shadow: 0 0 7px 1px #0000009f;
+        padding: 5px 15px;
+        margin: 10px;
     text-align: center;
 }
 .maq_link ol{
@@ -486,4 +499,84 @@ nav {
 }
 .exit img{
     width: 35px;
+}
+@media (min-width: 768px) {
+    .navbar_box .more img{
+        width: 36px;
+    }
+    .navbar_box .donate img{
+        width: 36px;
+    }
+    .navbar_box .logo img{
+        width: 90px;
+    }
+    .home_exit{
+        padding: 20px 0;
+    }
+    .ol_maq{
+        max-height: 45vh;
+    }
+    .menobar_header_box_show{
+        width: 50%;
+    }
+    .sushal{
+        width: 150%;
+        display: flex;
+        justify-content: space-evenly;
+    }
+}
+@media (min-width: 1024px) {
+    .navbar_box{
+        justify-content: space-around;
+    }
+    .menobar_links{
+        display: flex;
+        flex-direction: row;
+    }
+    .menolap_box a{
+        margin: 0 10px;
+        padding: 5px 20px;
+        background-color: #00000036;
+        border-radius: 9999px;
+        color: #e3e3e3;
+        text-decoration: none;
+    }
+.menolap{
+    background-color: #00000044;
+    padding: 20px 30px;
+    border-radius: 9999px;
+    width: 65%;
+    font-family: "titr";
+    display: flex;
+    overflow: scroll;
+    scrollbar-width: none;
+}
+.menolap_box li{
+    list-style: none;
+    
+}
+.footer_item{
+    flex-direction: row;
+}
+.footer_logo{
+    margin-left: 50px;
+}
+}
+@media (min-width: 1440px) {
+    .home_exit{
+        justify-content: center;
+        width: 50%;
+    }
+    .home{
+        margin-left: 50px;
+    }
+    .home img{
+        width: 43px;
+    }
+    .exit{
+        margin-right: 50px;
+    }
+    .exit img{
+        width: 43px;
+    }
 }
