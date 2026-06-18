@@ -17,7 +17,7 @@ const mq_link = document.querySelector(".maq_link");
 const overlay_maq = document.querySelector(".overlaytwo");
 const exitEL = document.querySelector(".exit");
 const menolap = document.querySelector(".menolap");
-const menolap_box = document.querySelector(".menolap_box");
+const menolap_box = document.querySelector(".menobar_links");
 if(window.innerWidth >= 1024){
     morebtn.remove("more");
 }
@@ -126,7 +126,7 @@ fetch("assets/json/data.json")
             ol_items.insertAdjacentHTML('beforeend', ol_itemsHandler);
             menubarItem.insertAdjacentHTML('beforeend', menubarItemHandler);
             const lap_itemsHandler = `
-                <a class="mq_links_li" href="/${item.slug}" data-id="${item.id}">${item.title}</a>
+                <li><a class="mq_links_li" href="/${item.slug}" data-id="${item.id}">${item.title}</a></li>
             `;
             menolap_box.insertAdjacentHTML('beforeend', lap_itemsHandler);
 

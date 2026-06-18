@@ -188,8 +188,7 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #00000013;
-    box-shadow: 0 0 9px 4px #000000aa;
+    background-color: #000000aa;
     padding: 5px 10px;
     border-radius: 9999px;
     margin: 20px 0;
@@ -197,7 +196,7 @@ nav {
     transition: all .3s ease;
 }
 .table_cont tr:hover{
-    box-shadow: 0 0 9px 4px #000000de;
+    box-shadow: 0 0 5px 1px rgba(161, 47, 193, 0.603);
 }
 .table_cont td {
     display: flex;
@@ -537,6 +536,7 @@ nav {
     .menobar_links{
         display: flex;
         flex-direction: row;
+        white-space: nowrap;
     }
     .menolap_box a{
         margin: 0 10px;
@@ -546,6 +546,52 @@ nav {
         color: #e3e3e3;
         text-decoration: none;
     }
+   .menolap {
+        background-color: #00000044;
+        padding: 20px 30px;
+        border-radius: 9999px;
+        width: 65%;
+        font-family: "titr";
+        display: flex;
+        justify-content: center;
+        overflow: hidden; /* مخفی کردن اسکرول اضافی */
+        scrollbar-width: none;
+        position: relative;
+    }
+    
+    .menolap_box {
+        width: 100%;/* ارتفاع ثابت برای فعال شدن اسکرول */
+        overflow-x: auto !important; /* اسکرول عمودی */
+        overflow-y: hidden !important; /* مخفی کردن افقی */
+        padding-right: 10px; /* فاصله برای اسکرول بار */
+        margin-right: -5px; /* جبران فاصله */
+        
+        /* استایل اسکرول */
+        scrollbar-width: thin;
+        scrollbar-color: #a52ad6 #00000036;
+    }
+    
+    /* استایل اسکرول بار در دسکتاپ */
+    .menolap_box::-webkit-scrollbar {
+        width: 5px;
+    }
+    
+    .menolap_box::-webkit-scrollbar-track {
+        background: rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+        margin: 5px 0;
+    }
+    
+    .menolap_box::-webkit-scrollbar-thumb {
+        background: linear-gradient(180deg, #a52ad6, #6a1b9a);
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .menolap_box::-webkit-scrollbar-thumb:hover {
+        background: linear-gradient(180deg, #7b1fa2, #4a148c);
+        box-shadow: 0 0 15px rgba(161, 47, 193, 0.6);
+    }
 .menolap{
     background-color: #00000044;
     padding: 20px 30px;
@@ -553,18 +599,21 @@ nav {
     width: 65%;
     font-family: "titr";
     display: flex;
-    overflow: scroll;
+    overflow-y: scroll;
     scrollbar-width: none;
 }
 .menolap_box li{
     list-style: none;
-    
 }
 .footer_item{
     flex-direction: row;
 }
 .footer_logo{
     margin-left: 50px;
+}
+.menolap_box{
+    width: 90%;
+    overflow: scroll;
 }
 }
 @media (min-width: 1440px) {
