@@ -595,6 +595,9 @@ nav {
         background: linear-gradient(180deg, #7b1fa2, #4a148c);
         box-shadow: 0 0 15px rgba(161, 47, 193, 0.6);
     }
+    .mq_links_li{
+        margin: 0 4px !important;
+    }
 .menolap{
     background-color: #00000044;
     padding: 20px 30px;
@@ -607,6 +610,9 @@ nav {
 }
 .header_title{
     margin-top: 100px;
+}
+.items_box h2{
+    margin-top: 50px !important;
 }
 .menolap_box li{
     list-style: none;
@@ -632,6 +638,9 @@ nav {
     }
     .home img{
         width: 43px;
+    }
+    .items_box p{
+        font-size: 20px;
     }
     .exit{
         margin-right: 50px;
