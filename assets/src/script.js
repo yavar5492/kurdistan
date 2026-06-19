@@ -1,4 +1,5 @@
-const body = document.querySelector('body')
+//باید ماژولار بشه و داخل برنج خودش مرج شه به مستر در گیت
+const body = document.querySelector('body');
 const stickyElement = document.querySelector('.navbar_box');
 const headerOffset = stickyElement.offsetTop;
 const titleSite = document.querySelector(".header_title");

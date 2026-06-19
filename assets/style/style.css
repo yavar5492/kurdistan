@@ -533,6 +533,9 @@ nav {
     .navbar_box{
         justify-content: space-around;
     }
+    .ol_maq{
+        width: 40% !important;
+    }
     .menobar_links{
         display: flex;
         flex-direction: row;
@@ -602,6 +605,9 @@ nav {
     overflow-y: scroll;
     scrollbar-width: none;
 }
+.header_title{
+    margin-top: 100px;
+}
 .menolap_box li{
     list-style: none;
 }
@@ -619,7 +625,7 @@ nav {
 @media (min-width: 1440px) {
     .home_exit{
         justify-content: center;
-        width: 50%;
+        width: 20%;
     }
     .home{
         margin-left: 50px;
