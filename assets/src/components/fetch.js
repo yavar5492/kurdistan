@@ -2,15 +2,7 @@ import {menubarItem,ol_items,menolap_box,html,footer,items,title,body,stickyElem
 fetch("assets/json/data.json")
     .then(res => res.json())
     .then(data => {
-        // فرض می‌کنیم کلید مورد نظر در JSON شما 'dataItem' است.
-        // اگر کلید دیگری است، آن را جایگزین کنید.
-        const { dataItem } = data; // یا const dataItems = data; اگر JSON شما مستقیماً یک آرایه است
-
-        // مهم: اطمینان حاصل کنید که menubarItem، body، و items در DOM شما وجود دارند.
-        // مثلاً:
-        // const menubarItem = document.getElementById('your-menubar-container-id');
-        // const body = document.body;
-        // const items = document.getElementById('your-items-container-id');
+        const { dataItem } = data;
         const basePath = window.location.pathname.replace(/\/$/, '');
         dataItem.forEach((item) => {
             const menubarItemHandler = `
@@ -31,11 +23,7 @@ fetch("assets/json/data.json")
             `;
             menolap_box.insertAdjacentHTML('beforeend', lap_itemsHandler);
 
-            // توجه: اضافه کردن event listener در داخل forEach ممکن است بهینه نباشد
-            // و باعث ایجاد event listener های تکراری شود. بهتر است از event delegation استفاده کنید.
-            // در ادامه روش بهینه تر را نشان می دهم.
         });menubarItem.addEventListener("click", (e) => {
-            // اطمینان حاصل کنید که روی لینک کلیک شده است
             if (!e.target.classList.contains("menobar_links_li")) {
                 return;
             }
@@ -45,10 +33,8 @@ fetch("assets/json/data.json")
             footer.classList.add("footerHidden")
             const id = Number(e.target.dataset.id);
 
-            // **اینجا اصلاح شده:** از 'dataItem' (کل آرایه) برای پیدا کردن آیتم استفاده کنید
-            const selection = dataItem.find(dataItem => dataItem.id === id); // از 'dataItem' به جای 'item' استفاده شده
+            const selection = dataItem.find(dataItem => dataItem.id === id);
 
-            // اطمینان از اینکه آیتم پیدا شده است
             if (selection) {
                 const menubarItemShowHandler = `
                     <div class="item">
@@ -58,7 +44,6 @@ fetch("assets/json/data.json")
                         </div>  
                     </div>
                 `;
-                // برای جلوگیری از تکرار آیتم ها، محتوای فعلی را پاک کنید
                 items.innerHTML = "";
                 items.insertAdjacentHTML("beforeend", menubarItemShowHandler);
                 title.insertAdjacentHTML("beforeend", ` - ${selection.title}`);
@@ -71,7 +56,6 @@ fetch("assets/json/data.json")
             overlay.classList.remove("overlay_show");
         });
         ol_items.addEventListener("click", (ev) => {
-            // اطمینان حاصل کنید که روی لینک کلیک شده است
             if (!ev.target.classList.contains("mq_links_li")) {
                 return;
             }
@@ -80,11 +64,7 @@ fetch("assets/json/data.json")
             html.classList.add("bodyScrollLock");
             footer.classList.add("footerHidden")
             const id = Number(ev.target.dataset.id);
-
-            // **اینجا اصلاح شده:** از 'dataItem' (کل آرایه) برای پیدا کردن آیتم استفاده کنید
-            const selection = dataItem.find(dataItem => dataItem.id === id); // از 'dataItem' به جای 'item' استفاده شده
-
-            // اطمینان از اینکه آیتم پیدا شده است
+            const selection = dataItem.find(dataItem => dataItem.id === id);
             if (selection) {
                 const menubarItemShowHandler = `
                     <div class="item">
@@ -94,7 +74,6 @@ fetch("assets/json/data.json")
                         </div>  
                     </div>
                 `;
-                // برای جلوگیری از تکرار آیتم ها، محتوای فعلی را پاک کنید
                 items.innerHTML = "";
                 items.insertAdjacentHTML("beforeend", menubarItemShowHandler);
                 title.insertAdjacentHTML("beforeend", ` - ${selection.title}`);
@@ -111,7 +90,6 @@ fetch("assets/json/data.json")
             overlay_maq.classList.remove("overlaytwo_show");
         });
         menolap_box.addEventListener("click", (ev) => {
-            // اطمینان حاصل کنید که روی لینک کلیک شده است
             if (!ev.target.classList.contains("mq_links_li")) {
                 return;
             }
@@ -121,10 +99,8 @@ fetch("assets/json/data.json")
             footer.classList.add("footerHidden")
             const id = Number(ev.target.dataset.id);
 
-            // **اینجا اصلاح شده:** از 'dataItem' (کل آرایه) برای پیدا کردن آیتم استفاده کنید
-            const selection = dataItem.find(dataItem => dataItem.id === id); // از 'dataItem' به جای 'item' استفاده شده
+            const selection = dataItem.find(dataItem => dataItem.id === id);
 
-            // اطمینان از اینکه آیتم پیدا شده است
             if (selection) {
                 const menubarItemShowHandler = `
                     <div class="item">
@@ -134,7 +110,7 @@ fetch("assets/json/data.json")
                         </div>  
                     </div>
                 `;
-                // برای جلوگیری از تکرار آیتم ها، محتوای فعلی را پاک کنید
+
                 items.innerHTML = "";
                 items.insertAdjacentHTML("beforeend", menubarItemShowHandler);
                 title.insertAdjacentHTML("beforeend", ` - ${selection.title}`);
