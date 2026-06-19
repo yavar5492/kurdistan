@@ -9,7 +9,7 @@ import {
     overlay_maq,
     exitEL,
     html,
-    closeItem, itemnav, stickyElement, items, footer,
+    closeItem, itemnav, stickyElement, items, footer, title,
 } from "../common.js";
 morebtn.addEventListener("click", e => {
     menubarEL.classList.add("menobar_header_box_show");
@@ -59,4 +59,5 @@ closeItem.addEventListener("click", e => {
     body.classList.remove("bodyScrollLock");
     footer.classList.remove("footerHidden");
     overlay_maq.classList.remove("overlaytwo_show");
+    title.innerHTML = "کوردستان";
 })
