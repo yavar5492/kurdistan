@@ -306,6 +306,16 @@ nav {
     backdrop-filter: blur(50px);
     height: 100vh;
 }
+.items_btn_close{
+    all: unset;
+    display: none;
+}
+.items_btn_close_show{
+    display: flex;
+}
+.items_btn_close img{
+    width: 30px;
+}
 .items_box {
     height: 84vh;
     overflow-y: scroll;
@@ -316,6 +326,9 @@ nav {
     font-family: "bahij";
     transition: all .1s ease;
     animation: show_items .3s ease;
+}
+.itemHidden{
+    display: none !important;
 }
 .items_box::-webkit-scrollbar {
     width: 0;

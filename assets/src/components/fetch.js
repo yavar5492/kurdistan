@@ -1,4 +1,4 @@
-import {menubarItem,ol_items,menolap_box,html,footer,items,title,body,stickyElement,menubarEL,overlay,overlay_maq,mq_link} from "../common.js";
+import {menubarItem,ol_items,menolap_box,html,footer,items,title,body,stickyElement,closeItem,menubarEL,overlay,overlay_maq,mq_link} from "../common.js";
 fetch("assets/json/data.json")
     .then(res => res.json())
     .then(data => {
@@ -17,7 +17,6 @@ fetch("assets/json/data.json")
                 <li><a class="mq_links_li" href="/${item.slug}" data-id="${item.id}">${item.title}</a></li>
             `;
             ol_items.insertAdjacentHTML('beforeend', ol_itemsHandler);
-            menubarItem.insertAdjacentHTML('beforeend', menubarItemHandler);
             const lap_itemsHandler = `
                 <li><a class="mq_links_li" href="/${item.slug}" data-id="${item.id}">${item.title}</a></li>
             `;
@@ -52,6 +51,8 @@ fetch("assets/json/data.json")
                 console.error("Item not found with id:", id);
             }
             stickyElement.classList.add('fixed');
+            items.classList.remove("itemHidden");
+            closeItem.classList.add("items_btn_close_show");
             menubarEL.classList.remove("menobar_header_box_show");
             overlay.classList.remove("overlay_show");
         });
@@ -82,6 +83,8 @@ fetch("assets/json/data.json")
             }
 
             stickyElement.classList.add('fixed');
+            items.classList.remove("itemHidden");
+            closeItem.classList.add("items_btn_close_show");
             body.classList.remove("bodyScrollLock");
             mq_link.classList.remove('shwoo');
             setTimeout(() =>{
@@ -96,7 +99,7 @@ fetch("assets/json/data.json")
 
             ev.preventDefault();
             html.classList.add("bodyScrollLock");
-            footer.classList.add("footerHidden")
+            footer.classList.add("footerHidden");
             const id = Number(ev.target.dataset.id);
 
             const selection = dataItem.find(dataItem => dataItem.id === id);
@@ -119,6 +122,8 @@ fetch("assets/json/data.json")
             }
 
             stickyElement.classList.add('fixed');
+            items.classList.remove("itemHidden");
+            closeItem.classList.add("items_btn_close_show");
             body.classList.remove("bodyScrollLock");
 
         });

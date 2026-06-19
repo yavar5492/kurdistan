@@ -1,4 +1,16 @@
-import {morebtn, menubarEL,body,overlay,closebtnMenubar,btn_maq,mq_link,overlay_maq,exitEL,} from "../common.js";
+import {
+    morebtn,
+    menubarEL,
+    body,
+    overlay,
+    closebtnMenubar,
+    btn_maq,
+    mq_link,
+    overlay_maq,
+    exitEL,
+    html,
+    closeItem, itemnav, stickyElement, items, footer,
+} from "../common.js";
 morebtn.addEventListener("click", e => {
     menubarEL.classList.add("menobar_header_box_show");
     body.classList.add("bodyScrollLock");
@@ -39,3 +51,12 @@ overlay_maq.addEventListener("click", e => {
     }, 500);
     overlay_maq.classList.remove("overlaytwo_show");
 });
+closeItem.addEventListener("click", e => {
+    items.classList.add("itemHidden");
+    closeItem.classList.remove("items_btn_close_show");
+    stickyElement.classList.remove('fixed');
+    html.classList.remove("bodyScrollLock");
+    body.classList.remove("bodyScrollLock");
+    footer.classList.remove("footerHidden");
+    overlay_maq.classList.remove("overlaytwo_show");
+})
