@@ -1,4 +1,4 @@
-import {item,stickyElement,headerOffset} from "../common.js";
+import {item,stickyElement,headerOffset, menolap_boxx} from "../common.js";
 window.addEventListener('scroll', () => {
     if (window.pageYOffset >= headerOffset) {
         stickyElement.classList.add('fixed');
@@ -22,4 +22,8 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
     item.forEach((item) => observer.observe(item));
+});
+menolap_boxx.addEventListener('wheel', function(e) {
+    e.preventDefault();
+    this.scrollLeft -= e.deltaY;
 });

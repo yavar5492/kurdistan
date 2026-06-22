@@ -19,5 +19,6 @@ export const mq_link = document.querySelector(".maq_link");
 export const overlay_maq = document.querySelector(".overlaytwo");
 export const exitEL = document.querySelector(".exit");
 export const menolap = document.querySelector(".menolap");
+export const menolap_boxx = document.querySelector(".menolap_box");
 export const menolap_box = document.querySelector(".menobar_links");
 export const item = document.querySelectorAll(".item_header_box_des");

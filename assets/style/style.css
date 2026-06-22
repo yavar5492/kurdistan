@@ -238,7 +238,9 @@ nav {
     color: #e3e3e3;
     font-family: "bahij";
     overflow: scroll;
-    scrollbar-width: none;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: #e3e3e3 #00000036;
     height: 65vh;
     font-size: 15px;
 }
@@ -574,7 +576,14 @@ nav {
         scrollbar-width: none;
         position: relative;
     }
-    
+    .header_title{
+        margin: 110px 0 12px !important;
+    }
+    .maq_link ol{
+        border-radius: 0 40px 40px 0;
+    scrollbar-width: thin;
+    scrollbar-color: #e3e3e3 #00000036;
+    }
     .menolap_box {
         width: 100%;/* ارتفاع ثابت برای فعال شدن اسکرول */
         overflow-x: auto !important; /* اسکرول عمودی */
@@ -584,30 +593,9 @@ nav {
         
         /* استایل اسکرول */
         scrollbar-width: thin;
-        scrollbar-color: #a52ad6 #00000036;
+        scrollbar-color: #e3e3e3 #00000036;
     }
-    
-    /* استایل اسکرول بار در دسکتاپ */
-    .menolap_box::-webkit-scrollbar {
-        width: 5px;
-    }
-    
-    .menolap_box::-webkit-scrollbar-track {
-        background: rgba(0, 0, 0, 0.2);
-        border-radius: 10px;
-        margin: 5px 0;
-    }
-    
-    .menolap_box::-webkit-scrollbar-thumb {
-        background: linear-gradient(180deg, #a52ad6, #6a1b9a);
-        border-radius: 10px;
-        border: 1px solid rgba(255, 255, 255, 0.1);
-    }
-    
-    .menolap_box::-webkit-scrollbar-thumb:hover {
-        background: linear-gradient(180deg, #7b1fa2, #4a148c);
-        box-shadow: 0 0 15px rgba(161, 47, 193, 0.6);
-    }
+    /* برای شخصی سازی اسکرول بار میشه از این پروپرتی اسکرول بار کالر استفاده کنیم و کالر اول اون دسته تکان خورنده است و دوم پس زمینه اش و اسکرول بار ویت و مقدار تین یعنی تا حد امکان باریک تر از پیش فرض باشه*/
     .mq_links_li{
         margin: 0 4px !important;
     }
